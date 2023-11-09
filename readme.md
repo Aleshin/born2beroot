@@ -232,11 +232,14 @@ sudo ufw allow 7080/tcp
 sudo ufw reload
 localhost:7080 [in browser]
 ## Evaluation
+### General
 shasum Born2beRoot.vdi
 diff signature.txt signature1.txt
+### Simple setup
 sudo ufw status
 sudo systemctl status ssh
 head -n 2 /etc/os-release
+### User
 getent group sudo
 getent group user42
 sudo adduser new username
@@ -244,10 +247,12 @@ sudo vim /etc/pam.d/common-password
 sudo vim /etc/login.defs
 sudo groupadd groupname
 sudo usermod -aG groupname username
+### Hostname and partitions
 hostnamectl
 hostnamectl set-hostname new_hostname
-sudo nano /etc/hosts
+sudo vim /etc/hosts
 lsblk
+### Sudo
 dpkg -l | grep sudo
 sudo ufw status numbered
 sudo ufw allow port-id
